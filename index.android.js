@@ -1,4 +1,10 @@
 import { AppRegistry } from 'react-native';
-import App from './example/App';
+import { getStorybookUI, configure } from '@kadira/react-native-storybook';
+import '@kadira/react-native-storybook/addons';
 
-AppRegistry.registerComponent('Bible', () => App);
+configure(() => {
+  require('./examples'); // eslint-disable-line global-require
+}, module);
+
+const StorybookUI = getStorybookUI({ port: 7007, host: 'localhost' });
+AppRegistry.registerComponent('Bible', () => StorybookUI);
