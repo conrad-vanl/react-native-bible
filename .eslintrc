@@ -1,0 +1,28 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "react"
+  ],
+  "extends": [ "airbnb" ],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      "\\.json$"
+    ],
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack-js.config.js"
+      }
+    },
+    "import/parser": "babel-eslint"
+  }
+}
