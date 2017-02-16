@@ -1,6 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { storiesOf } from '@kadira/react-native-storybook';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import HtmlPsalm1 from '../src/html/__stories__/psalm-1';
+import ScripturePsalm1 from '../src/scripture/__stories__/psalm-1';
 
 const style = {
   flex: 1,
@@ -9,15 +13,18 @@ const style = {
   backgroundColor: '#F5FCFF',
 };
 
-const CenteredView = (props) => (
+const CenteredView = props => (
   <View style={style}>
     {props.children}
   </View>
 );
 
-storiesOf('CenteredView')
-  .add('default view', () => (
-    <CenteredView>
-      <Text>Hello Storybook</Text>
-    </CenteredView>
+storiesOf('HTML Rendering')
+  .add('Psalm 1', () => (
+    <HtmlPsalm1 />
+  ));
+
+storiesOf('Scripture Component')
+  .add('Psalm 1', () => (
+    <ScripturePsalm1 />
   ));
